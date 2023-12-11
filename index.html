@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Lucky Draw</title>
+    <meta name="description" content="Lucky Draw">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="assets/HKU Engineering Logo White.png"></div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h1>Lucky Draw</h1>
+            <div class="snow-animation" id="win-effect"></div>
+            <div class="draw_area">
+                <div class="outer" id="draw-area-bg">
+                    <div class="inner">
+                        <div class="slottt-machine-recipe">
+                            <div class="slottt-machine-recipe__mask" id="namebox">
+                                <div class="slottt-machine-recipe__items_container recipe_if" id="winner-name">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="drawanimate()" id="start-btn"></button>
+    </main>
+
+    <footer id="footer"></footer>
+</body>
+
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+<script src="main.js"></script>
+
+</html>

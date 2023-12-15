@@ -26,7 +26,8 @@ function popPushNItems($container, n) {
     if (index !== -1) {
         namelist.splice(index, 1);
     }
-    console.log(namelist)
+    //console.log(namelist)
+    $('#num_count').text("Remaining: " + namelist.length)
 
     document.getElementById("win-effect").style.display = "block";
     draw_area_bg.style.background = "url(./assets/draw_animation1.png)";
@@ -40,6 +41,9 @@ function popPushNItems($container, n) {
 // so the animation can slide upward infinitely without adding
 // inifinte div elements inside the container.
 function rotateContents($container, n) {
+    if (namelist.length == 1){
+        n = 0;
+    }
     setTimeout(function () {
         popPushNItems($container, n);
         $container.css({ top: 0 });
@@ -48,24 +52,44 @@ function rotateContents($container, n) {
 
 function randomSlotttIndex(max) {
     var randIndex = (Math.random() * max | 0);
-    return (randIndex > 10) ? randIndex : randomSlotttIndex(max);
+    return (randIndex > 0) ? randIndex : randomSlotttIndex(max);
 }
 
 function drawanimate() {
+    $("#winner-name").empty();
+    buildSlotContents($namebox, namelist);
+    buildSlotContents($namebox, namelist);
+    buildSlotContents($namebox, namelist);
+
+    let count = $("#winner-name").children().length;
+
+    console.log(count);
     draw_area_bg.style.background = "url(./assets/draw_animation2.png)";
     draw_area_bg.style.backgroundRepeat = "no-repeat";
     draw_area_bg.style.backgroundSize = "cover";
     draw_area_bg.style.backgroundPosition = "center center";
     document.getElementById("win-effect").style.display = "none";
-    var wordIndex = randomSlotttIndex(namelist.length);
-    $namebox.animate({ top: -wordIndex * 150 }, 2000, 'swing', function () {
+
+    const firstname = document.getElementById("winner-name");
+    firstname.removeChild(firstname.firstElementChild);
+
+    if (namelist.length == 0){
+        return randomSlotttIndex(0);
+    }
+    var wordIndex = randomSlotttIndex(count);
+
+    $namebox.animate({ top: -wordIndex * 150 }, 1500, 'swing', function () {
         rotateContents($namebox, wordIndex);
     });
 }
 
 $(function () {
-    const d = new Date();
-    let year = d.getFullYear();
+    // const d = new Date();
+    // let year = d.getFullYear();
+
+    // $('#footer').text("Copyright@" + year)
+
+    // $('#footer').append("<div>Copyright@"+ year +"</div>" );
 
     async function getFile(fileURL) {
         let fileContent = await fetch(fileURL);
@@ -73,14 +97,13 @@ $(function () {
         return fileContent;
     }
     // Passing file url 
-    getFile('file.txt').then(content => {
+    getFile('alllist.txt').then(content => {
         // Using split method and passing "\n" as parameter for splitting
         namelist = content.trim().split("\n");
 
-        $('#footer').text("Copyright@" + year)
         $namebox = $('#namebox .slottt-machine-recipe__items_container');
-        buildSlotContents($namebox, namelist);
-
+        //buildSlotContents($namebox, namelist);
+        const firstElement = namelist.shift();
     });
 
 

@@ -9,7 +9,9 @@ body {
     /* background: linear-gradient(240deg, #ff462d .13%, #ff422f 26.19%, #ff3634 52.6%, #ff223c 79.08%, #ff0c45); */
     display: flex;
     flex-direction: column;
-    background: url(./assets/christmas.jpg);
+    justify-content: space-between;
+    height: 90vh;
+    background: url(./assets/chad-madden-SUTfFCAHV_A-unsplash.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -33,53 +35,14 @@ img {
 }
 
 header {
-    width: auto;
-    height: 12.25rem;
+    height: 200px;
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: transparent;
-}
-
-.logo {
-    margin: 0.2em;
-    padding: 0.25em;
-}
-
-.logo img {
-    width: 25rem;
-}
-
-main {
-    width: auto;
-    height: auto;
-    min-height: calc(100% - 20rem);
-    margin-bottom: 5rem;
-}
-
-main .container {
-    width: auto;
-    height: auto;
-    padding: 0.1em;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
-.snow-animation {
-    background-image: url(./assets/win.png);
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    animation: snow 3s linear infinite;
-    pointer-events: none;
-    display: none;
-    z-index: 5;
-}
-
-.container h1 {
+header h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 5rem;
     font-weight: bold;
@@ -93,6 +56,50 @@ main .container {
     /* IE 10 and IE 11 */
     user-select: none;
     /* Standard syntax */
+}
+
+.logo {
+    margin: 0.2em;
+    padding: 0.25em;
+}
+
+.logo img {
+    width: 25rem;
+}
+
+main {
+    width: auto;
+    /* height: auto; */
+    min-height: 500px;
+    /* margin-bottom: 5rem; */
+}
+
+main .container {
+    width: auto;
+    height: auto;
+    padding: 0.1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h4 {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.snow-animation {
+    background-image: url(./assets/win.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    animation: snow 3s linear infinite;
+    pointer-events: none;
+    display: none;
+    z-index: 5;
 }
 
 .draw_area {
@@ -118,7 +125,7 @@ main .container {
 
 .inner {
     background-color: #fff;
-    border-radius: 2rem;
+    border-radius: 1rem;
     overflow: hidden;
     width: 28rem;
     height: 13rem;
@@ -143,16 +150,19 @@ main .container {
 
 .slottt-machine-recipe__items_container {
     position: absolute;
+    left: 50px;
 }
 
 .slottt-machine-recipe__item {
+    max-width: 350px;
     min-height: 150px;
     max-height: 150px;
     margin: 0px;
     padding: 0px;
     background-size: contain;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 3.5rem;
 }
 
 .recipe_if,
@@ -170,7 +180,7 @@ main .container {
     position: absolute;
     width: 50px;
     height: 150px;
-    top:50%;
+    top:25%;
     left: 63%;
     text-align: center;
     background-color: transparent;
@@ -189,6 +199,18 @@ footer {
     width: 100%;
     height: 2.25rem;
     display: flex;
-    align-items: end;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    pointer-events: none;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }

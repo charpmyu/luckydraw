@@ -13,12 +13,11 @@
 
 <body>
     <header>
-        <div class="logo"><img src="assets/HKU Engineering Logo White.png"></div>
+        <h1>Lucky Draw</h1>
     </header>
-    
     <main>
         <div class="container">
-            <h1>Lucky Draw</h1>
+            <h4 id="num_count">Remaining: </h4>
             <div class="snow-animation" id="win-effect"></div>
             <div class="draw_area">
                 <div class="outer" id="draw-area-bg">
@@ -36,7 +35,9 @@
         <button onclick="drawanimate()" id="start-btn"></button>
     </main>
 
-    <footer id="footer"></footer>
+    <footer id="footer">
+        <div class="logo"><img src="assets/HKU Engineering Logo White.png"></div>
+    </footer>
 </body>
 
 <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
